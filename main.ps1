@@ -17,9 +17,10 @@ if ($zombies) {
     Start-Sleep -Seconds 1
 }
 
-# 2. Iniciar SERVIDOR (Oculto)
-Write-Host "[2/3] Iniciando servidor (Oculto)..." -ForegroundColor Green
-$serverProcess = Start-Process -FilePath "powershell" -ArgumentList "-NoProfile -ExecutionPolicy Bypass -File `"$PSScriptRoot\server.ps1`"" -WindowStyle Hidden -PassThru
+# 2. Iniciar SERVIDOR (Minimizado para estabilidad)
+Write-Host "[2/3] Iniciando servidor..." -ForegroundColor Green
+# NOTA: Usamos Minimized en vez de Hidden para evitar cierres inesperados en algunos sistemas
+$serverProcess = Start-Process -FilePath "powershell" -ArgumentList "-NoProfile -ExecutionPolicy Bypass -File `"$PSScriptRoot\server.ps1`"" -WindowStyle Minimized -PassThru
 
 if (!$serverProcess) {
     Write-Host "ERROR CRITICO: No se pudo arrancar el servidor." -ForegroundColor Red
@@ -28,7 +29,7 @@ if (!$serverProcess) {
 }
 
 # Esperar a que arranque
-Start-Sleep -Seconds 2
+Start-Sleep -Seconds 3
 
 # Verificar si sigue vivo
 if ($serverProcess.HasExited) {
