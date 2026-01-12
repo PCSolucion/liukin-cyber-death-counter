@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trauma Team Death Counter</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&family=Share+Tech+Mono&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="widget-container">
+
+        <!-- Main HUD Layout -->
+        <div class="hud-panel">
+            <!-- Scanline Overlay -->
+            <div class="scanlines"></div>
+
+            <div class="hud-header">
+                <div class="hud-title">
+                    <span class="icon-cross">+</span> TRAUMA TEAM <span class="sub-id">:: NC-V.1.0</span>
+                </div>
+                <div class="hud-client">
+                    REF: <strong>LIUKIN</strong>
+                </div>
+            </div>
+
+            <div class="hud-body">
+                <div class="side-decor">
+                    <div class="japanese-vert">死亡</div> <!-- Muerte -->
+                    <div class="tech-lines"></div>
+                </div>
+
+                <div class="main-counter-area">
+                    <div class="label-top">NEURO-TRAUMA EVENT COUNTER</div>
+
+                    <div class="counter-box">
+                        <div class="number-backing">888</div> <!-- Ghost numbers for effect -->
+                        <div id="count" class="current-number">0</div>
+                    </div>
+
+                    <!-- Fake ECG Line -->
+                    <div class="ecg-container">
+                        <svg class="ecg-line" viewBox="0 0 500 100" preserveAspectRatio="none">
+                            <polyline
+                                points="0,50 100,50 120,0 140,100 160,50 200,50 250,50 300,50 320,0 340,100 360,50 500,50"
+                                fill="none" stroke="var(--tt-red)" stroke-width="2"
+                                vector-effect="non-scaling-stroke" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hud-footer">
+                <div class="status-indicator">
+                    <span class="blink-dot"></span> VITAL SIGNS: <strong>CRITICAL</strong>
+                </div>
+                <div class="hex-codes">0xF4A1 0x0000 0xFFFF</div>
+            </div>
+
+            <!-- Corner bits -->
+            <div class="corner-tl"></div>
+            <div class="corner-br"></div>
+        </div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

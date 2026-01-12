@@ -1,0 +1,9 @@
+# Archivos de estado local
+count.txt
+server_error.log
+
+# Archivos de sistema/temporales
+.DS_Store
+Thumbs.db
+*.tmp
+*.log
