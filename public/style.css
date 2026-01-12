@@ -180,10 +180,13 @@ body {
     font-size: 5.5rem;
     line-height: 1;
     font-weight: 700;
-    color: #222;
-    /* Faint grey background numbers */
+    color: var(--tt-red);
+    opacity: 0.1;
+    /* Much more subtle unlit effect */
     z-index: 1;
     user-select: none;
+    filter: blur(0.5px);
+    /* Soften edges like real LEDs */
 }
 
 /* ECG Line */
@@ -280,8 +283,8 @@ body {
 
 @keyframes damage-flash-anim {
     0% {
-        border-color: #fff;
-        box-shadow: 0 0 30px rgba(255, 255, 255, 0.5) inset;
+        border-color: var(--tt-red);
+        box-shadow: 0 0 15px rgba(255, 59, 59, 0.3) inset;
     }
 
     100% {
@@ -291,5 +294,5 @@ body {
 }
 
 .damage-flash {
-    animation: damage-flash-anim 0.2s cubic-bezier(0.1, 0.7, 1.0, 0.1);
+    animation: damage-flash-anim 0.4s ease-out;
 }
