@@ -2,7 +2,7 @@
     --tt-red: #ff3b3b;
     --tt-red-glow: rgba(255, 59, 59, 0.4);
     --tt-dark: #0b0b0f;
-    --tt-panel-bg: rgba(16, 18, 20, 0.85);
+    --tt-panel-bg: rgba(16, 18, 20, 0.95);
     --tt-text-main: #e6e6e6;
     --tt-text-dim: #5c5c5c;
     --font-ui: 'Rajdhani', sans-serif;
@@ -20,6 +20,12 @@ body {
     font-family: var(--font-ui);
 }
 
+/* --- 3D PERSPECTIVE CONTAINER (Cyberpunk Curved HUD Effect) --- */
+.widget-container {
+    perspective: 800px;
+    perspective-origin: center center;
+}
+
 /* --- HUD PANEL CONTAINER --- */
 .hud-panel {
     position: relative;
@@ -33,6 +39,11 @@ body {
     color: var(--tt-text-main);
     padding: 2px;
     /* Inner border gap */
+
+    /* 3D Curved HUD Effect - Cyberpunk 2077 Style */
+    transform: rotateY(-3.5deg) scale(0.99);
+    transform-origin: center center;
+    transform-style: preserve-3d;
 }
 
 /* Background Grid/Scanlines */
@@ -144,8 +155,10 @@ body {
 }
 
 .label-top {
-    font-size: 0.75rem;
-    color: var(--tt-text-dim);
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
     letter-spacing: 2px;
     margin-bottom: 5px;
 }
